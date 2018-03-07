@@ -1,0 +1,11 @@
+#home {
+  border: 1px solid red;
+}
+
+.app-image {
+  background-image: url('../../assets/app.png');
+  background-size: contain;
+  height: 500px;
+  background-repeat: no-repeat;
+
+}
