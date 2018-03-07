@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dev-server --mode development"
+    "build": "babel-node ./scripts/build"
   },
   "author": "",
   "license": "ISC",
