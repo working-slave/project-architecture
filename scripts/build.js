@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleWare from 'webpack-hot-middleware';
 import config from '../webpack.config.babel.js';
+import smartBanner from 'smartbanner.js'
 
 const app = express();
 
