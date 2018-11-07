@@ -16,10 +16,12 @@ const directories = path.resolve(root, 'src/Page');
 // })
 
 module.exports = {
+  mode: 'development',
   devtool: 'cheap-module-eval-source-map',
   context: path.join(__dirname, 'src'),
   entry: {
-    home: './page/home/index.js'
+    home: ['./page/home/index.js', 'webpack-hot-middleware/client'],
+    
   },
   // entry: entries,
   output: {
@@ -38,17 +40,12 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: 'test',
+          limit: 3000,
         }
       }]}
     ]
   },
 
-  
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    // inline: true,
-    stats: 'errors-only'
-  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "My App",
@@ -56,7 +53,7 @@ module.exports = {
       chunks: ['home'], 
       inject: 'body'
     }),
-
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jquery: 'jquery'
